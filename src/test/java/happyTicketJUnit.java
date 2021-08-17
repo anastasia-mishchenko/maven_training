@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.*;
 import org.testng.Assert;
 
-public class luckyTicketTest {
+public class happyTicketJUnit {
 
     @Test
     public void verifyLuckyTicket(){
@@ -9,21 +9,22 @@ public class luckyTicketTest {
         Assert.assertTrue(actualResult);
     }
 
-    @org.testng.annotations.Test
+    @Test
     public void verifyTicketIsNotLucky(){
         boolean actualResult = luckyTicket.isTicketLucky(1,2,3,4,5,6);
         Assert.assertTrue(!actualResult);
     }
+
+
     //1,2,3,4,5,6 --> false
     //1,1,1,1,1,1 --> true
-    //-1,-1,-1,-1 --> true
-    //a,b,c,d,e,f --> false
+    //-1,-1,-1,-1 --> compilation error ( reason: actual and formal argument lists differ in length)
+    //a,b,c,d,e,f --> compilation error
 
-    @Test
-    public void verifyIsTicketLucky(){
-        boolean actResult = luckyTicket.isTicketLucky(1,2,3,4,5,6);
-        Assertions.assertTrue(true,"Lucky");
-    }
+//    @Test
+//    public void verifyIsTicketLucky(){
+//        boolean actResult = luckyTicket.isTicketLucky(-1,-1,-1,-1);
+//          }
 
     @BeforeAll
     public static void beforeAll(){
